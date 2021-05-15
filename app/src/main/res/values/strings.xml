@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Senity Security Systems</string>
+    <string name="servicedesc">Senity HCE</string>
+    <string name="aiddescription">Senity hce app service</string>
+</resources>
