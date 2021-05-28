@@ -10,7 +10,7 @@
     android:paddingRight="16dp"
     android:orientation="vertical"
     android:paddingTop="16dp"
-
+    android:background="@color/mainbgColor"
     >
 
 

@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.TextView;
 
+import com.airbnb.lottie.Lottie;
 import com.airbnb.lottie.LottieAnimationView;
 
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
     public static String KEY_ID2 = "EMULATED_UID";
     public static final String PASS_CODE = "PSSCD";
     public String getpasscode = null;
-    Button GetUID;
+    static Button GetUID;
+    static LottieAnimationView gears;
+    static LottieAnimationView circle;
+    static TextView fetchuidtext;
     TextView HeadLine;
     static boolean Get_UID = false;
     static boolean Bl_Set = false;
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_constraintlayout);
         DeviceID = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
         BA = BluetoothAdapter.getDefaultAdapter();
         hc05 = BA.getRemoteDevice(hc05_Mac_addr);
@@ -106,6 +110,18 @@ public class MainActivity extends AppCompatActivity {
         });
         if(Bl_Set)
         {
+            //button GetUID;
+            fetchuidtext = findViewById(R.id.fetchUID);
+            GetUID = findViewById(R.id.getUIDButton);
+            gears = findViewById(R.id.animated_gears);
+            circle = findViewById(R.id.highlight_gear);
+            fetchuidtext.setVisibility(View.VISIBLE);
+            GetUID.setVisibility(View.GONE);
+            gears.setVisibility(View.GONE);
+            circle.setVisibility(View.GONE);
+
+
+
             Bl_Set = false;
 
             GetUID.setVisibility(View.GONE);
@@ -121,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             //Show Dialog
             progressDialog.show();
             //Set Content View
-            progressDialog.setContentView(R.layout.progress_dialog);
+            progressDialog.setContentView(R.layout.progress_dialog_constraintlayout);
             //Set Transparent Background
             progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
             //set it center
@@ -370,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.print("Saved sUID: ");
         System.out.println(sUID);
         editor.apply();
-        editor.commit();
+        //editor.commit();
 
     }
     public void deleteSavedData(){

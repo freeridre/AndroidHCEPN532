@@ -24,7 +24,7 @@ public class LoadActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_load);
+        setContentView(R.layout.activity_load_constraintlayout);
         progressBar = (ProgressBar)findViewById(R.id.SpinkitLoading);
         //SpinkitLoading.getWindow().setBackgroundResource(android.R.color.transparent);
         ThreeBounce threeBounce = new ThreeBounce();
@@ -51,8 +51,8 @@ public class LoadActivity extends AppCompatActivity {
                     //intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent2);
                     finish();
-                //If there is saved UID
-                }else if(!getSavedData ()){
+                //If there is saved UID and no get UID pressed yet
+                }else if(!getSavedData () && !Get_UID){
                     System.out.println("LoadActivity: Go to UID Page!");
                     Intent intent2 = new Intent();
                     intent2 = new Intent(getApplicationContext(), UIDActivity.class);

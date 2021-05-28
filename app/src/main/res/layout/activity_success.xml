@@ -10,7 +10,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    >
+    android:background="@color/mainbgColor">
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/successlottie"
         android:layout_width="240dp"

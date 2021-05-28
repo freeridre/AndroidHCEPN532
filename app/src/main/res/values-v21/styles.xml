@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/mainbgColor</item>
+        <item name="colorPrimaryDark">@color/mainbgColor</item>
+        <item name="colorAccent">@color/mainbgColor</item>
+    </style>
+    <style name="HiddenTitleTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:navigationBarColor">@color/mainbgColor</item>
+        <item name="android:windowBackground">@color/mainbgColor</item>
+    </style>
+</resources>

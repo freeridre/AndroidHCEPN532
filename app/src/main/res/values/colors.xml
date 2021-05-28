@@ -12,4 +12,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="brightBlue">#3333FF</color>
     <color name="red">#FF0000</color>
+    <color name="mainbgColor">#222831</color>
+    <color name="companycolor">#e1e5ea</color>
 </resources>

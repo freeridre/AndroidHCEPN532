@@ -13,6 +13,7 @@
 
 
     tools:context=".CreatePassCodeActivity"
+    android:background="@color/mainbgColor"
     >
 
     <TextView
@@ -39,7 +40,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberPassword"
-        android:layout_marginTop="245dp"/>
+        android:layout_marginTop="245dp"
+        android:textCursorDrawable="@color/white"
+        android:textColor="@color/white"/>
     <in.codeshuffle.typewriterview.TypeWriterView
         android:id="@+id/typeWriterView_enterpass"
         android:layout_width="match_parent"
@@ -86,7 +89,8 @@
         android:inputType="numberPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
-        />
+        android:textCursorDrawable="@color/white"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/button"
@@ -102,7 +106,7 @@
         android:layout_height="60dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/enter_3"
+        app:lottie_rawRes="@raw/enter_4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="355dp"
         />

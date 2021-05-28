@@ -6,12 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="80dp"
-    android:paddingLeft="@dimen/activity_vertical_margin"
-    android:paddingRight="16dp"
+    android:paddingStart="@dimen/activity_vertical_margin"
+    android:paddingEnd="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
 
-    tools:context=".EnterPassCodeActivity">
+    tools:context=".EnterPassCodeActivity"
+    android:background="@color/mainbgColor"
+    android:theme="@style/HiddenTitleTheme"
+    >
 
     <in.codeshuffle.typewriterview.TypeWriterView
         android:id="@+id/typeWriterView"
@@ -37,6 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textCursorDrawable="@color/white"
+        android:textColor="@color/white"
+
 
         android:inputType="numberPassword"
         android:layout_centerHorizontal="true"
@@ -60,19 +66,21 @@
         android:layout_alignBottom="@+id/enter"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="360dp"
+        android:background="@android:color/transparent"
         android:text="ENTER"
-        android:background="@android:color/transparent"/>
+        android:textColor="#FFFFFF"
+        tools:ignore="NotSibling" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/enter_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/enter_3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="355dp"
-        />
+        app:lottie_rawRes="@raw/enter_4" />
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="100dp"
         android:layout_height="100dp"

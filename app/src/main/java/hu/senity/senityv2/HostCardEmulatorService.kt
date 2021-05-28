@@ -2,12 +2,12 @@ package hu.senity.senityv2
 import android.content.SharedPreferences
 import android.nfc.cardemulation.HostApduService
 import android.os.Bundle
-import hu.senity.senityv2.MainActivity.KEY_ID2
+import hu.senity.senityv2.MainActivity.KEY_ID2 as MainActivityKEY_ID2
 
 
 class HostCardEmulatorService: HostApduService() {
     companion object {
-        val TAG = "Host Card Emulator"
+        val TAG = "Senity Host Card Emulator"
         val STATUS_SUCCESS = "9000"
         val STATUS_FAILED = "6F00"
         val CLA_NOT_SUPPORTED = "6E00"
@@ -49,11 +49,11 @@ class HostCardEmulatorService: HostApduService() {
             //val sharedPreferences: SharedPreferences = this.getSharedPreferences(MainActivity.KEY_ID2, MODE_PRIVATE)
             //val uid: String? = sharedPreferences.getString(KEY_ID2,"")
             val sharedPreferences = getSharedPreferences(MainActivity.SHARED_PREF_NAME, MODE_PRIVATE)
-            val uid = sharedPreferences.getString(KEY_ID2, "")
-            print("HostCardEmulation: Emualted UID: ");
-            println(uid.toString());
+            val uid = sharedPreferences.getString(MainActivityKEY_ID2, "")
+            print("HostCardEmulation: Emualted UID: ")
+            println(uid.toString())
             return Utils.hexStringToByteArray(uid.toString())
-            //return Utils.hexStringToByteArray("29AB686E")
+            //return Utils.hexStringToByteArray("29")
 
             //return Utils.hexStringToByteArray(STATUS_SUCCESS)
         } else {

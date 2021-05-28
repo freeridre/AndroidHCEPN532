@@ -14,7 +14,8 @@ class Utils {
                 val octet = firstIndex.shl(4).or(secondIndex)
                 result.set(i.shr(1), octet.toByte())
             }
-
+            print("Utils: ");
+            println(result.toString());
             return result
         }
 

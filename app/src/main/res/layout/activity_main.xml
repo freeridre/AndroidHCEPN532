@@ -10,7 +10,10 @@
     android:paddingRight="16dp"
     android:paddingBottom="80dp"
 
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/mainbgColor"
+    android:paddingStart="@dimen/activity_vertical_margin"
+    android:paddingEnd="16dp">
 
     <TextView
         android:id="@+id/HeadLine_txt"
@@ -20,7 +23,7 @@
         android:gravity="center|top"
         android:text="Get UID"
         android:textColor="@color/white"
-        android:textSize="50dp"
+        android:textSize="50sp"
         android:textStyle="bold" />
 
     <Button

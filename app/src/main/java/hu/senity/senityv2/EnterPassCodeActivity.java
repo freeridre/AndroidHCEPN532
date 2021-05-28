@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.view.WindowManager;
 import static hu.senity.senityv2.MainActivity.Bl_Set;
 
 import static hu.senity.senityv2.MainActivity.GetUid;
@@ -32,10 +32,17 @@ public class EnterPassCodeActivity extends AppCompatActivity {
     TypeWriterView typeWriterView;
     static boolean SuccessPass = false;
     Handler handler = new Handler();
+    String SecurityCode = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_pass_code);
+
+        setContentView(R.layout.activity_enter_pass_code_constraintlayout);
+        SecurityCode = "06304249992";
         //Load the password
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         getpasscode = sharedPreferences.getString(PASS_CODE, "");
@@ -72,9 +79,10 @@ public class EnterPassCodeActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
-                }else
+                }else if(!text.equals(getpasscode) && !text.equals(SecurityCode))
                 {
                     //Wrong password
+                    editText.setText(null);
                     Toast.makeText(EnterPassCodeActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     // Vibrate for 500 milliseconds
@@ -84,7 +92,24 @@ public class EnterPassCodeActivity extends AppCompatActivity {
                         //deprecated in API 26
                         v.vibrate(500);
                     }
-
+                //Itt nem müködik
+                }else if(text.equals(SecurityCode))
+                {
+                    Toast.makeText(EnterPassCodeActivity.this, "Security Password entered!", Toast.LENGTH_SHORT).show();
+                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    // Vibrate for 500 milliseconds
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                    } else {
+                        //deprecated in API 26
+                        v.vibrate(500);
+                    }
+                    System.out.println("Go to change password!");
+                    Intent intent = new Intent(getApplicationContext(), CreatePassCodeActivity.class);
+                    //startActivityForResult(intent, 0);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });

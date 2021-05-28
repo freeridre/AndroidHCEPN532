@@ -1,6 +1,7 @@
 package hu.senity.senityv2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +20,13 @@ import static hu.senity.senityv2.MainActivity.Get_UID;
 public class FailedActivity2 extends AppCompatActivity {
     Handler handler = new Handler();
     private RelativeLayout failedactivity2View = null;
+    private ConstraintLayout failedactivity2Viewconstraint = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_failed2);
-        failedactivity2View = (RelativeLayout) findViewById(R.id.failedactivity2View);
+        setContentView(R.layout.activity_failed2_constraintlayout);
+        //failedactivity2View = (RelativeLayout) findViewById(R.id.failedactivity2View);
+        failedactivity2Viewconstraint = (ConstraintLayout) findViewById(R.id.failedactivity2Viewconstraint);
 
         /*runOnUiThread(new Runnable(){
             @Override
@@ -49,8 +52,8 @@ public class FailedActivity2 extends AppCompatActivity {
             }
         }, 6000);*/
 
-
-        failedactivity2View.setOnTouchListener(new View.OnTouchListener() {
+        failedactivity2Viewconstraint.setOnTouchListener(new View.OnTouchListener() {
+        //failedactivity2View.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 

@@ -15,7 +15,7 @@ public class SuccessActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_success);
+        setContentView(R.layout.activity_success_constraintlayout);
 
         new Handler().postDelayed(new Runnable() {
 
