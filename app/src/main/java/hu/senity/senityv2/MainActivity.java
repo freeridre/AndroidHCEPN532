@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private static Set<BluetoothDevice> pairedDevices;
     static BluetoothDevice hc05;
     static final String hc05_Mac_addr = "C3:3C:1C:04:00:79";
+    //static final String hc05_Mac_addr = "19:10:094DD3";
     static String mSenity_Addr = null;
     private final static String SignedPacket = "4ccb86cc88b0d78895aef37f5352c360";
     static BluetoothSocket btSocket;

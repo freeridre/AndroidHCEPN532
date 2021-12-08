@@ -5,8 +5,12 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.NFC" />
+
+
+
 
     <uses-feature
         android:name="android.hardware.nfc.hce"
@@ -65,7 +69,7 @@
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:windowDisablePreview="true"
-           >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
